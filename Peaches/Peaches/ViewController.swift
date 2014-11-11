@@ -32,7 +32,9 @@ class ViewController: UIViewController {
         self.performSegueWithIdentifier("presentRestOfApp", sender: self)
     }
     
-    
+     override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
     
     
     
