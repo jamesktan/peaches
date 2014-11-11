@@ -16,6 +16,7 @@
 		5410350D1A1255C600D4EB09 /* PeachesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410350C1A1255C600D4EB09 /* PeachesTests.swift */; };
 		544B13901A126D1A00FC0E2F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B138F1A126D1A00FC0E2F /* AddressBook.framework */; };
 		544B13921A126D1E00FC0E2F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B13911A126D1E00FC0E2F /* AddressBookUI.framework */; };
+		544B13941A127B9500FC0E2F /* peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 544B13931A127B9500FC0E2F /* peach.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5410350C1A1255C600D4EB09 /* PeachesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeachesTests.swift; sourceTree = "<group>"; };
 		544B138F1A126D1A00FC0E2F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		544B13911A126D1E00FC0E2F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		544B13931A127B9500FC0E2F /* peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peach.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				541034F31A1255C600D4EB09 /* AppDelegate.swift */,
 				541034F81A1255C600D4EB09 /* ViewController.swift */,
 				541034FA1A1255C600D4EB09 /* Main.storyboard */,
+				544B13931A127B9500FC0E2F /* peach.png */,
 				541034FD1A1255C600D4EB09 /* Images.xcassets */,
 				541034FF1A1255C600D4EB09 /* LaunchScreen.xib */,
 				541034F51A1255C600D4EB09 /* Peaches.xcdatamodeld */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				541034FC1A1255C600D4EB09 /* Main.storyboard in Resources */,
+				544B13941A127B9500FC0E2F /* peach.png in Resources */,
 				541035011A1255C600D4EB09 /* LaunchScreen.xib in Resources */,
 				541034FE1A1255C600D4EB09 /* Images.xcassets in Resources */,
 			);

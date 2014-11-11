@@ -29,6 +29,15 @@ class ViewController: UIViewController {
         UIApplication.sharedApplication().openURL(NSURL(string: "tel:3000,734224")!)
     }
 
+    @IBAction func startAppFlow(sender: AnyObject) {
+        self.performSegueWithIdentifier("presentRestOfApp", sender: self)
+    }
+    
+    
+    
+    
+    
+    
     /**
     getAddressBookNames
     */
