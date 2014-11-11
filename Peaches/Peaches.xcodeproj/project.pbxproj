@@ -14,6 +14,8 @@
 		541034FE1A1255C600D4EB09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541034FD1A1255C600D4EB09 /* Images.xcassets */; };
 		541035011A1255C600D4EB09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541034FF1A1255C600D4EB09 /* LaunchScreen.xib */; };
 		5410350D1A1255C600D4EB09 /* PeachesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410350C1A1255C600D4EB09 /* PeachesTests.swift */; };
+		544B13901A126D1A00FC0E2F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B138F1A126D1A00FC0E2F /* AddressBook.framework */; };
+		544B13921A126D1E00FC0E2F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B13911A126D1E00FC0E2F /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		541035061A1255C600D4EB09 /* PeachesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeachesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5410350B1A1255C600D4EB09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5410350C1A1255C600D4EB09 /* PeachesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeachesTests.swift; sourceTree = "<group>"; };
+		544B138F1A126D1A00FC0E2F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		544B13911A126D1E00FC0E2F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544B13921A126D1E00FC0E2F /* AddressBookUI.framework in Frameworks */,
+				544B13901A126D1A00FC0E2F /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,8 @@
 		541034F11A1255C600D4EB09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				544B13911A126D1E00FC0E2F /* AddressBookUI.framework */,
+				544B138F1A126D1A00FC0E2F /* AddressBook.framework */,
 				541034F21A1255C600D4EB09 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -410,6 +418,7 @@
 				541035121A1255C600D4EB09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		541035131A1255C600D4EB09 /* Build configuration list for PBXNativeTarget "PeachesTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +427,7 @@
 				541035151A1255C600D4EB09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

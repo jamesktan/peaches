@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>935A180F-CDEF-420B-BA81-CD2FE9BEF415</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Peaches</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3DE170F38EC68B03544D33DC21A4E805292C317B</key>
+		<string>https://github.com/jamesktan/peaches.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Peaches/Peaches.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3DE170F38EC68B03544D33DC21A4E805292C317B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jamesktan/peaches.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3DE170F38EC68B03544D33DC21A4E805292C317B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3DE170F38EC68B03544D33DC21A4E805292C317B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>peaches</string>
+		</dict>
+	</array>
+</dict>
+</plist>
