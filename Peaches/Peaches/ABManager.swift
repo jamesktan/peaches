@@ -15,6 +15,14 @@ extension UIViewController {
     }
 }
 class ABManager: NSObject {
+    
+    class var sharedInstance : ABManager {
+        struct Static {
+            static let instance : ABManager = ABManager()
+        }
+        return Static.instance
+    }
+
     /**
     getAddressBookNames
     */
