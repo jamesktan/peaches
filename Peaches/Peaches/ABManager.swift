@@ -9,6 +9,11 @@
 import UIKit
 import AddressBook
 
+extension UIViewController {
+    func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+}
 class ABManager: NSObject {
     /**
     getAddressBookNames
