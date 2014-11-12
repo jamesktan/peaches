@@ -690,25 +690,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peach.png" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-4c-EtW">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="9ZM-jm-blG"/>
-                                    <constraint firstAttribute="width" constant="57" id="osL-tb-Vh6"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9ZM-jm-blG"/>
-                                        <exclude reference="osL-tb-Vh6"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="9ZM-jm-blG"/>
-                                        <include reference="osL-tb-Vh6"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -734,8 +715,6 @@
                             <constraint firstItem="4Ji-G3-ulo" firstAttribute="top" secondItem="p46-b0-P2q" secondAttribute="bottom" constant="-21" id="cQh-sX-aRi"/>
                             <constraint firstItem="NRa-c5-csh" firstAttribute="top" secondItem="prw-Xi-Rl6" secondAttribute="bottom" constant="-9" id="fKA-dq-nS6"/>
                             <constraint firstItem="4aV-iy-66O" firstAttribute="centerX" secondItem="5Az-jh-KEx" secondAttribute="centerX" id="gG8-Pc-Ouh"/>
-                            <constraint firstItem="fNx-4c-EtW" firstAttribute="top" secondItem="NRa-c5-csh" secondAttribute="bottom" constant="8" id="geC-Fm-YUS"/>
-                            <constraint firstItem="fNx-4c-EtW" firstAttribute="centerX" secondItem="NRa-c5-csh" secondAttribute="centerX" constant="0.5" id="iEN-QI-Cv9"/>
                             <constraint firstItem="hjY-ai-Rzc" firstAttribute="centerX" secondItem="NRa-c5-csh" secondAttribute="centerX" constant="2" id="mgv-Wc-VrM"/>
                             <constraint firstItem="NRa-c5-csh" firstAttribute="centerX" secondItem="5Az-jh-KEx" secondAttribute="centerX" constant="-2" id="suu-Ez-yMs"/>
                             <constraint firstItem="4Ji-G3-ulo" firstAttribute="centerX" secondItem="p46-b0-P2q" secondAttribute="centerX" id="tPL-Qk-atq"/>
@@ -759,7 +738,6 @@
                                 <exclude reference="4Ji-G3-ulo"/>
                                 <exclude reference="W6Q-mz-MR0"/>
                                 <exclude reference="Gws-bB-l0t"/>
-                                <exclude reference="fNx-4c-EtW"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="J3Y-4z-wiD"/>
@@ -771,8 +749,6 @@
                                 <exclude reference="JI9-Gr-qAP"/>
                                 <exclude reference="XnR-tz-TAE"/>
                                 <exclude reference="bf0-nd-cOG"/>
-                                <exclude reference="geC-Fm-YUS"/>
-                                <exclude reference="iEN-QI-Cv9"/>
                                 <exclude reference="AbB-uB-pJU"/>
                                 <exclude reference="gG8-Pc-Ouh"/>
                                 <exclude reference="FhR-eb-83y"/>
@@ -810,7 +786,6 @@
                                 <include reference="4Ji-G3-ulo"/>
                                 <include reference="W6Q-mz-MR0"/>
                                 <include reference="Gws-bB-l0t"/>
-                                <include reference="fNx-4c-EtW"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="J3Y-4z-wiD"/>
@@ -822,8 +797,6 @@
                                 <include reference="JI9-Gr-qAP"/>
                                 <include reference="XnR-tz-TAE"/>
                                 <include reference="bf0-nd-cOG"/>
-                                <include reference="geC-Fm-YUS"/>
-                                <include reference="iEN-QI-Cv9"/>
                                 <include reference="AbB-uB-pJU"/>
                                 <include reference="gG8-Pc-Ouh"/>
                                 <include reference="FhR-eb-83y"/>
@@ -1489,7 +1462,4 @@
             <point key="canvasLocation" x="2182.5" y="-282.75"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="peach.png" width="280" height="337"/>
-    </resources>
 </document>
