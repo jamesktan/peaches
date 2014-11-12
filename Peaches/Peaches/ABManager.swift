@@ -1,39 +1,15 @@
 //
-//  ViewController.swift
+//  ABManager.swift
 //  Peaches
 //
-//  Created by James Tan on 11/11/14.
+//  Created by James Tan on 11/12/14.
 //  Copyright (c) 2014 Axon Flux. All rights reserved.
 //
 
 import UIKit
 import AddressBook
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var test: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    @IBAction func enterCredentials(sender: AnyObject) {
-        self.performSegueWithIdentifier("editCredentials", sender: self)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-     override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
-    
-    
-    
-    
+class ABManager: NSObject {
     /**
     getAddressBookNames
     */
@@ -135,4 +111,3 @@ class ViewController: UIViewController {
     }
 
 }
-
