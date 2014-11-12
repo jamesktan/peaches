@@ -85,6 +85,9 @@
                                         <include reference="nz9-r8-whV"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="a_dismiss:" destination="wKx-qf-mut" eventType="touchUpInside" id="KWo-Zo-AUx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFe-Uz-3zP">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -207,27 +210,80 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW TO CALL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-40-2vc">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="8W5-o2-Z4K"/>
+                                    <constraint firstAttribute="height" constant="60" id="hvw-wi-uSZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <color key="textColor" red="0.28627450980000002" green="0.74509803919999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="20" width="280" height="60"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8W5-o2-Z4K"/>
+                                        <exclude reference="hvw-wi-uSZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8W5-o2-Z4K"/>
+                                        <include reference="hvw-wi-uSZ"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn how phone calls work" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-pL-480">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="OBH-wl-xzO"/>
+                                    <constraint firstAttribute="width" constant="280" id="xQg-kL-PWg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="62" width="280" height="41"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OBH-wl-xzO"/>
+                                        <exclude reference="xQg-kL-PWg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OBH-wl-xzO"/>
+                                        <include reference="xQg-kL-PWg"/>
+                                    </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Md-CL-bpg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Kbk-tg-zom"/>
+                                    <constraint firstAttribute="width" constant="240" id="qbp-zq-GUL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="25"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Kbk-tg-zom"/>
+                                        <exclude reference="qbp-zq-GUL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Kbk-tg-zom"/>
+                                        <include reference="qbp-zq-GUL"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="a_dismiss:" destination="HdU-si-86I" eventType="touchUpInside" id="qKt-aK-15F"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpx-4y-N3e">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="H99-Yn-xcm"/>
-                                    <constraint firstAttribute="height" constant="535" id="QD2-Tk-sxV"/>
+                                    <constraint firstAttribute="width" constant="280" id="pkT-6T-jMi"/>
                                 </constraints>
                                 <string key="text">1. Edit Your Credentials By editing your credentials, we'll be able to populate the new phone number to dial in your address book.  2. Select Your Contacts Select contacts that you want to apply this numbering scheme to. You may want to apply this to some contacts or all contacts. In either case, the original number will be replaced with the reformatted one.  3. Make Calls Normally Afterwards, just go ahead and make phone calls normally. You'll automatically be routed through your organization's call accounting system as per your credentials. When you're done, just go through the application to revert those numbers.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,57 +291,64 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="H99-Yn-xcm"/>
-                                        <exclude reference="QD2-Tk-sxV"/>
+                                        <exclude reference="pkT-6T-jMi"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="H99-Yn-xcm"/>
-                                        <include reference="QD2-Tk-sxV"/>
+                                        <include reference="pkT-6T-jMi"/>
                                     </mask>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Md-CL-bpg">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.2156862745" green="0.26274509800000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="25"/>
-                                <state key="normal" title="DONE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="735" width="240" height="45"/>
-                                </variation>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Lpx-4y-N3e" secondAttribute="centerY" constant="0.5" id="9dG-mZ-h4F"/>
+                            <constraint firstItem="cIV-40-2vc" firstAttribute="top" secondItem="zK2-Et-96B" secondAttribute="bottom" id="AKB-zM-hLb"/>
+                            <constraint firstItem="Lpx-4y-N3e" firstAttribute="top" secondItem="cIV-40-2vc" secondAttribute="bottom" constant="20" id="FIM-An-Abm"/>
+                            <constraint firstItem="j9u-pL-480" firstAttribute="top" secondItem="cIV-40-2vc" secondAttribute="bottom" constant="-18" id="JJ1-D0-iz6"/>
+                            <constraint firstItem="9Md-CL-bpg" firstAttribute="top" secondItem="Lpx-4y-N3e" secondAttribute="bottom" constant="80" id="T7a-jj-90Y"/>
+                            <constraint firstAttribute="centerX" secondItem="9Md-CL-bpg" secondAttribute="centerX" id="TNh-vh-z0l"/>
+                            <constraint firstAttribute="centerX" secondItem="cIV-40-2vc" secondAttribute="centerX" id="fyL-Do-AU7"/>
+                            <constraint firstItem="j9u-pL-480" firstAttribute="centerX" secondItem="cIV-40-2vc" secondAttribute="centerX" id="hH4-Bn-RGG"/>
+                            <constraint firstItem="r22-TL-M6P" firstAttribute="top" secondItem="9Md-CL-bpg" secondAttribute="bottom" constant="20" id="nbS-5m-6Iu"/>
                             <constraint firstAttribute="centerX" secondItem="Lpx-4y-N3e" secondAttribute="centerX" id="yK5-59-hcz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="cIV-40-2vc"/>
                                 <exclude reference="j9u-pL-480"/>
-                                <exclude reference="Lpx-4y-N3e"/>
                                 <exclude reference="9Md-CL-bpg"/>
+                                <exclude reference="Lpx-4y-N3e"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9dG-mZ-h4F"/>
+                                <exclude reference="AKB-zM-hLb"/>
+                                <exclude reference="fyL-Do-AU7"/>
+                                <exclude reference="JJ1-D0-iz6"/>
+                                <exclude reference="hH4-Bn-RGG"/>
+                                <exclude reference="FIM-An-Abm"/>
                                 <exclude reference="yK5-59-hcz"/>
+                                <exclude reference="T7a-jj-90Y"/>
+                                <exclude reference="TNh-vh-z0l"/>
+                                <exclude reference="nbS-5m-6Iu"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="cIV-40-2vc"/>
                                 <include reference="j9u-pL-480"/>
-                                <include reference="Lpx-4y-N3e"/>
                                 <include reference="9Md-CL-bpg"/>
+                                <include reference="Lpx-4y-N3e"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9dG-mZ-h4F"/>
+                                <include reference="AKB-zM-hLb"/>
+                                <include reference="fyL-Do-AU7"/>
+                                <include reference="JJ1-D0-iz6"/>
+                                <include reference="hH4-Bn-RGG"/>
+                                <include reference="FIM-An-Abm"/>
                                 <include reference="yK5-59-hcz"/>
+                                <include reference="T7a-jj-90Y"/>
+                                <include reference="TNh-vh-z0l"/>
+                                <include reference="nbS-5m-6Iu"/>
                             </mask>
                         </variation>
                     </view>
@@ -1303,6 +1366,9 @@
                                         <include reference="s7L-Kz-F8C"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="a_dismiss:" destination="QeL-Zu-fIf" eventType="touchUpInside" id="QFR-sh-hD9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCf-Yd-Odc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
