@@ -17,6 +17,10 @@
 		544B13901A126D1A00FC0E2F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B138F1A126D1A00FC0E2F /* AddressBook.framework */; };
 		544B13921A126D1E00FC0E2F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B13911A126D1E00FC0E2F /* AddressBookUI.framework */; };
 		544B13941A127B9500FC0E2F /* peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 544B13931A127B9500FC0E2F /* peach.png */; };
+		54BCEA991A13F68C00259549 /* ConvertABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEA981A13F68C00259549 /* ConvertABViewController.swift */; };
+		54BCEA9B1A13F69C00259549 /* EditCredsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEA9A1A13F69C00259549 /* EditCredsViewController.swift */; };
+		54BCEA9D1A13F6AF00259549 /* RemoveABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEA9C1A13F6AF00259549 /* RemoveABViewController.swift */; };
+		54BCEA9F1A13F6BE00259549 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEA9E1A13F6BE00259549 /* HowToViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		544B138F1A126D1A00FC0E2F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		544B13911A126D1E00FC0E2F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		544B13931A127B9500FC0E2F /* peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peach.png; sourceTree = "<group>"; };
+		54BCEA981A13F68C00259549 /* ConvertABViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertABViewController.swift; sourceTree = "<group>"; };
+		54BCEA9A1A13F69C00259549 /* EditCredsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCredsViewController.swift; sourceTree = "<group>"; };
+		54BCEA9C1A13F6AF00259549 /* RemoveABViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveABViewController.swift; sourceTree = "<group>"; };
+		54BCEA9E1A13F6BE00259549 /* HowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,10 @@
 			children = (
 				541034F31A1255C600D4EB09 /* AppDelegate.swift */,
 				541034F81A1255C600D4EB09 /* ViewController.swift */,
+				54BCEA981A13F68C00259549 /* ConvertABViewController.swift */,
+				54BCEA9A1A13F69C00259549 /* EditCredsViewController.swift */,
+				54BCEA9C1A13F6AF00259549 /* RemoveABViewController.swift */,
+				54BCEA9E1A13F6BE00259549 /* HowToViewController.swift */,
 				541034FA1A1255C600D4EB09 /* Main.storyboard */,
 				544B13931A127B9500FC0E2F /* peach.png */,
 				541034FD1A1255C600D4EB09 /* Images.xcassets */,
@@ -230,7 +242,11 @@
 			files = (
 				541034F91A1255C600D4EB09 /* ViewController.swift in Sources */,
 				541034F41A1255C600D4EB09 /* AppDelegate.swift in Sources */,
+				54BCEA9B1A13F69C00259549 /* EditCredsViewController.swift in Sources */,
 				541034F71A1255C600D4EB09 /* Peaches.xcdatamodeld in Sources */,
+				54BCEA991A13F68C00259549 /* ConvertABViewController.swift in Sources */,
+				54BCEA9F1A13F6BE00259549 /* HowToViewController.swift in Sources */,
+				54BCEA9D1A13F6AF00259549 /* RemoveABViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
