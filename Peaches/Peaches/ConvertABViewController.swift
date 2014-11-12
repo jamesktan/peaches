@@ -10,6 +10,8 @@ import UIKit
 
 class ConvertABViewController: UIViewController {
 
+    @IBOutlet weak var tv_abTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,8 @@ class ConvertABViewController: UIViewController {
 
     @IBAction func a_dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBAction func a_convert(sender: AnyObject) {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

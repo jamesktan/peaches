@@ -114,6 +114,9 @@
                                         <include reference="h8e-O5-ETj"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="a_revert:" destination="wKx-qf-mut" eventType="touchUpInside" id="rHW-mJ-NaJ"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gGX-lj-ZFF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -192,6 +195,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ab_removeTable" destination="gGX-lj-ZFF" id="zx2-0b-41S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCg-Eh-5YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1395,6 +1401,9 @@
                                         <include reference="ORG-4P-s56"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="a_convert:" destination="QeL-Zu-fIf" eventType="touchUpInside" id="qao-bz-oB1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1456,6 +1465,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="tv_abTable" destination="oQ4-04-WoM" id="y96-Hl-v1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVZ-Ax-1LL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

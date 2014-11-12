@@ -10,6 +10,8 @@ import UIKit
 
 class RemoveABViewController: UIViewController {
 
+    @IBOutlet weak var ab_removeTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,10 @@ class RemoveABViewController: UIViewController {
 
     @IBAction func a_dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func a_revert(sender: AnyObject) {
+    
     }
     
     override func didReceiveMemoryWarning() {
