@@ -18,19 +18,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func enterCredentials(sender: AnyObject) {
+        self.performSegueWithIdentifier("editCredentials", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func dial(sender: AnyObject) {
-        
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel:3000,734224")!)
-    }
-
-    @IBAction func startAppFlow(sender: AnyObject) {
-        self.performSegueWithIdentifier("presentRestOfApp", sender: self)
-    }
     
      override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
