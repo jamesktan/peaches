@@ -32,7 +32,20 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func a_revert(sender: AnyObject) {
-    
+        
+        // No Selection
+        if (ab_selected.count == 0) {
+            UIAlertView(title: "No contacts selected!", message: "Please select some contacts to transform.", delegate: nil, cancelButtonTitle: "Okay").show()
+            return
+        }
+
+        
+        for bee in ab_selected {
+            ABManager.sharedInstance.revertPhoneNumber(bee as ABContact)
+        }
+        self.dismissViewControllerAnimated(true, completion: {
+            UIAlertView(title: "Success!", message: "You successfully reverted your contacts!", delegate: nil, cancelButtonTitle: "Okay").show()
+        })
     }
     
     override func didReceiveMemoryWarning() {
