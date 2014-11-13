@@ -29,6 +29,21 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func a_convert(sender: AnyObject) {
+        if (ab_selected.count == 0) {
+            UIAlertView(title: "No contacts selected!", message: "Please select some contacts to transform.", delegate: nil, cancelButtonTitle: "Okay").show()
+            return
+        }
+        if (ABManager.sharedInstance.beginningString.isEqualToString("")) {
+            UIAlertView(title: "No prefix detected!", message: "You haven't configured a prefix yet!", delegate: nil, cancelButtonTitle: "Okay").show()
+            return
+
+        }
+        for bee in ab_selected {
+            ABManager.sharedInstance.convertPhoneNumber(bee as ABContact)
+        }
+        self.dismissViewControllerAnimated(true, completion: {
+            UIAlertView(title: "Success!", message: "You successfully converted your contacts!", delegate: nil, cancelButtonTitle: "Okay").show()
+        })
         
     }
     override func didReceiveMemoryWarning() {
