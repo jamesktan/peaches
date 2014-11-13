@@ -12,6 +12,7 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var tv_abTable: UITableView!
     var ab : NSMutableArray = []
+    var ab_selected : NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,6 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 // MARK: - Table View Delegates
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ab.count
     }
@@ -56,7 +56,14 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.detailTextLabel?.textColor = UIColor.whiteColor()
         cell.textLabel.font = UIFont(name: "GillSans", size: 16)
         cell.detailTextLabel?.font = UIFont(name: "GillSans", size: 14)
-
+        
+        // Enable the right cell
+        var abSelectedArray : Array = ab_selected as Array!
+        var c = abSelectedArray.filter({$0.phoneNumber == cell.reuseIdentifier})
+        if (c.count > 0) {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        
         return cell
     }
     
@@ -65,8 +72,10 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
             cell.accessoryType = UITableViewCellAccessoryType.None
+            ab_selected.removeObject(ab.objectAtIndex(indexPath.row))
         } else {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            ab_selected.addObject(ab.objectAtIndex(indexPath.row))
         }
         
         tv_abTable.deselectRowAtIndexPath(indexPath, animated: true)
