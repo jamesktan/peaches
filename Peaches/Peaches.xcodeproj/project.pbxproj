@@ -22,6 +22,7 @@
 		54BCEAA11A13FCAC00259549 /* ABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEAA01A13FCAC00259549 /* ABManager.swift */; };
 		54BCEAA51A13FF8E00259549 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEAA41A13FF8E00259549 /* MainViewController.swift */; };
 		54E089A51A14180400BDC644 /* peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089A41A14180400BDC644 /* peach.png */; };
+		54E089A71A1563B700BDC644 /* peach2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089A61A1563B700BDC644 /* peach2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		54BCEAA01A13FCAC00259549 /* ABManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABManager.swift; sourceTree = "<group>"; };
 		54BCEAA41A13FF8E00259549 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		54E089A41A14180400BDC644 /* peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peach.png; sourceTree = "<group>"; };
+		54E089A61A1563B700BDC644 /* peach2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peach2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				54BCEA9E1A13F6BE00259549 /* HowToViewController.swift */,
 				54BCEAA01A13FCAC00259549 /* ABManager.swift */,
 				541034FA1A1255C600D4EB09 /* Main.storyboard */,
+				54E089A61A1563B700BDC644 /* peach2.png */,
 				54E089A41A14180400BDC644 /* peach.png */,
 				541034FD1A1255C600D4EB09 /* Images.xcassets */,
 				541034FF1A1255C600D4EB09 /* LaunchScreen.xib */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E089A71A1563B700BDC644 /* peach2.png in Resources */,
 				541034FC1A1255C600D4EB09 /* Main.storyboard in Resources */,
 				54E089A51A14180400BDC644 /* peach.png in Resources */,
 				541035011A1255C600D4EB09 /* LaunchScreen.xib in Resources */,
