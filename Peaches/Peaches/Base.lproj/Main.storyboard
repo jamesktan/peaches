@@ -1333,21 +1333,27 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oQ4-04-WoM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oQ4-04-WoM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="16j-Ie-dNa"/>
+                                    <constraint firstAttribute="width" constant="320" id="4dm-zC-TH8"/>
                                     <constraint firstAttribute="width" constant="280" id="iSl-5m-g97"/>
                                 </constraints>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="16j-Ie-dNa"/>
+                                        <exclude reference="4dm-zC-TH8"/>
                                         <exclude reference="iSl-5m-g97"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="iSl-5m-g97"/>
+                                        <exclude reference="16j-Ie-dNa"/>
+                                        <include reference="4dm-zC-TH8"/>
+                                        <exclude reference="iSl-5m-g97"/>
                                     </mask>
                                 </variation>
                             </tableView>
