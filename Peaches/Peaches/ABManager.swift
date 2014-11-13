@@ -42,6 +42,7 @@ class ABManager: NSObject {
         var ret: AnyObject? = NSUserDefaults.standardUserDefaults().valueForKey("prefix")
         
         if (ret != nil) {
+            beginningString = ret as NSString!
             return ret as NSString!
         } else {
             return x
