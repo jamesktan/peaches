@@ -38,6 +38,8 @@ class EditCredsViewController: UIViewController {
         string = string.stringByAppendingString(tf_countryCode.text)
         l_stringDisplay.text = string
         
+        ABManager.sharedInstance.beginningString = string
+        
     }
 
     @IBAction func a_dismissSelf(sender: AnyObject) {

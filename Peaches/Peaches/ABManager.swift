@@ -14,7 +14,17 @@ extension UIViewController {
         return UIStatusBarStyle.LightContent
     }
 }
+
+class ABContact : NSObject {
+    var name : NSString = ""
+    var phoneNumber : NSString = ""
+}
+
 class ABManager: NSObject {
+    
+    var beginningString : NSString = ""
+    var endingString : NSString = "#"
+    var addressBookArray : NSMutableArray = []
     
     class var sharedInstance : ABManager {
         struct Static {
@@ -23,10 +33,17 @@ class ABManager: NSObject {
         return Static.instance
     }
 
-    /**
-    getAddressBookNames
-    */
-    func getAddressBookNames() {
+    
+    func fetchAddressBookContacts() -> NSMutableArray {
+        if (addressBookArray.count) {
+            return addressBookArray
+        } else {
+            return self.getAddressBookNames()
+        }
+    }
+    
+    
+    func getAddressBookNames() -> NSMutableArray {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
         if (authorizationStatus == ABAuthorizationStatus.NotDetermined)
         {
