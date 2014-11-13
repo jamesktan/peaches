@@ -28,16 +28,26 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBAction func a_dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    /**
+    a_convert
+    Purpose: Convert the contacts on button click and then dismiss the user and prompt them about success
+    :param: sender The Button on the UI
+    */
     @IBAction func a_convert(sender: AnyObject) {
+        // No Selection
         if (ab_selected.count == 0) {
             UIAlertView(title: "No contacts selected!", message: "Please select some contacts to transform.", delegate: nil, cancelButtonTitle: "Okay").show()
             return
         }
+        // No Prefix
         if (ABManager.sharedInstance.beginningString.isEqualToString("")) {
             UIAlertView(title: "No prefix detected!", message: "You haven't configured a prefix yet!", delegate: nil, cancelButtonTitle: "Okay").show()
             return
 
         }
+        
+        //OTHERWISE!
         for bee in ab_selected {
             ABManager.sharedInstance.convertPhoneNumber(bee as ABContact)
         }
@@ -72,7 +82,7 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.textLabel.font = UIFont(name: "GillSans", size: 16)
         cell.detailTextLabel?.font = UIFont(name: "GillSans", size: 14)
         
-        // Enable the right cell
+        // Toggle the Right Cell
         var abSelectedArray : Array = ab_selected as Array!
         var c = abSelectedArray.filter({$0.phoneNumber == cell.reuseIdentifier})
         if (c.count > 0) {
@@ -83,6 +93,7 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         var cell : UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
         if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
