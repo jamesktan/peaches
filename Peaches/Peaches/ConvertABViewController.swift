@@ -23,6 +23,7 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         tv_abTable.dataSource = self
         
         ab = ABManager.sharedInstance.fetchAddressBookContacts()
+        tv_abTable.reloadData()
     }
 
     @IBAction func a_dismiss(sender: AnyObject) {

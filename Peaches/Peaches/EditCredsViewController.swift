@@ -25,6 +25,11 @@ class EditCredsViewController: UIViewController {
         
         // Have them all intercept the trigger
         tf_all.map({$0.addTarget(self, action: "a_updateTextEvents:", forControlEvents: UIControlEvents.EditingChanged)})
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        l_stringDisplay.text = ABManager.sharedInstance.fetchBeginningString() as NSString!
+
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -38,7 +43,7 @@ class EditCredsViewController: UIViewController {
         string = string.stringByAppendingString(tf_countryCode.text)
         l_stringDisplay.text = string
         
-        ABManager.sharedInstance.beginningString = string
+        ABManager.sharedInstance.setBeginningString(string)
         
     }
 

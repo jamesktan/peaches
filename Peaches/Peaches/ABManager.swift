@@ -35,6 +35,25 @@ class ABManager: NSObject {
         }
         return Static.instance
     }
+    
+    func fetchBeginningString() -> NSString! {
+        var x : NSString = NSString(string:"None")
+        
+        var ret: AnyObject? = NSUserDefaults.standardUserDefaults().valueForKey("prefix")
+        
+        if (ret != nil) {
+            return ret as NSString!
+        } else {
+            return x
+        }
+    }
+    func setBeginningString(string: NSString) {
+        beginningString = string
+        
+        // Store the string locally
+        NSUserDefaults.standardUserDefaults().setValue(string, forKey: "prefix")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
 
     /**
     fetchAddressBookContacts
