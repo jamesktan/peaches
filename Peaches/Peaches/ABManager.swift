@@ -24,6 +24,7 @@ class ABManager: NSObject {
     
     var beginningString : NSString = ""
     var endingString : NSString = "#"
+    
     var addressBookArray : NSMutableArray = []
     
     /// Singleton Design Pattern
@@ -35,17 +36,19 @@ class ABManager: NSObject {
         return Static.instance
     }
 
+    /**
+    fetchAddressBookContacts
     
+    :returns: NSMutableArray of ABContact objects. Each object contains information about the name and phone number for an individual. This is the complete addressbook including converted values.
+    */
     func fetchAddressBookContacts() -> NSMutableArray {
-        if (addressBookArray.count > 0) {
-            return addressBookArray
-        } else {
-            return self.getAddressBookNames()
+        if (addressBookArray.count == 0) {
+            addressBookArray = getAddressBookNames()
         }
+        return addressBookArray
     }
     
-    
-    func getAddressBookNames() -> NSMutableArray {
+    func getAddressBookNames() {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
         if (authorizationStatus == ABAuthorizationStatus.NotDetermined)
         {
@@ -80,28 +83,21 @@ class ABManager: NSObject {
         
         for record:ABRecordRef in contactList {
             processAddressbookRecord(record)
+            
+            var v : ABContact = ABContact()
+            
+            
             NSLog("--------")
         }
     }
     
     func processAddressbookRecord(addressBookRecord: ABRecordRef) {
         var contactName: String = ABRecordCopyCompositeName(addressBookRecord).takeRetainedValue() as NSString
-        NSLog("contactName: \(contactName)")
-        processEmail(addressBookRecord)
-        processPhone(addressBookRecord)
-    }
-    
-    func processEmail(addressBookRecord: ABRecordRef) {
-        let emailArray:ABMultiValueRef = extractABEmailRef(ABRecordCopyValue(addressBookRecord, kABPersonEmailProperty))!
-        for (var j = 0; j < ABMultiValueGetCount(emailArray); ++j) {
-            var emailAdd = ABMultiValueCopyValueAtIndex(emailArray, j)
-            var myString = extractABEmailAddress(emailAdd)
-            NSLog("email: \(myString)")
-        }
+        processPhone(addressBookRecord, contactName)
     }
     
     func processPhone(addressBookRecord:ABRecordRef) {
-        let phoneArray:ABMultiValueRef = extractABEmailRef(ABRecordCopyValue(addressBookRecord, kABPersonPhoneProperty))!
+        let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(addressBookRecord, kABPersonPhoneProperty))!
         for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
             var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
             var myString = extractABPhoneNumber(phoneAdd)
@@ -115,23 +111,9 @@ class ABManager: NSObject {
         }
         return nil
     }
-    
-    func extractABEmailRef (abEmailRef: Unmanaged<ABMultiValueRef>!) -> ABMultiValueRef? {
-        if let ab = abEmailRef {
-            return Unmanaged<NSObject>.fromOpaque(ab.toOpaque()).takeUnretainedValue()
-        }
-        return nil
-    }
     func extractABPhoneRef (abPhoneRef: Unmanaged<ABMultiValueRef>!) -> ABMultiValueRef? {
         if let ab = abPhoneRef {
             return Unmanaged<NSObject>.fromOpaque(ab.toOpaque()).takeUnretainedValue()
-        }
-        return nil
-    }
-    
-    func extractABEmailAddress (abEmailAddress: Unmanaged<AnyObject>!) -> String? {
-        if let ab = abEmailAddress {
-            return Unmanaged.fromOpaque(abEmailAddress.toOpaque()).takeUnretainedValue() as CFStringRef
         }
         return nil
     }
