@@ -26,6 +26,8 @@ class ABManager: NSObject {
     var endingString : NSString = "#"
     var addressBookArray : NSMutableArray = []
     
+    /// Singleton Design Pattern
+    /// Return the Shared Instance
     class var sharedInstance : ABManager {
         struct Static {
             static let instance : ABManager = ABManager()
