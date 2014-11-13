@@ -26,10 +26,9 @@ class EditCredsViewController: UIViewController {
         // Have them all intercept the trigger
         tf_all.map({$0.addTarget(self, action: "a_updateTextEvents:", forControlEvents: UIControlEvents.EditingChanged)})
         
-    }
-    override func viewDidAppear(animated: Bool) {
+        // Set the proper string on setup
         l_stringDisplay.text = ABManager.sharedInstance.fetchBeginningString() as NSString!
-
+   
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
