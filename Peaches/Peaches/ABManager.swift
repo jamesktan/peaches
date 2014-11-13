@@ -93,15 +93,20 @@ class ABManager: NSObject {
     
     func processAddressbookRecord(addressBookRecord: ABRecordRef) {
         var contactName: String = ABRecordCopyCompositeName(addressBookRecord).takeRetainedValue() as NSString
-        processPhone(addressBookRecord, contactName)
+        processPhone(addressBookRecord, name: contactName)
     }
     
-    func processPhone(addressBookRecord:ABRecordRef) {
+    func processPhone(addressBookRecord:ABRecordRef, name: NSString) {
         let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(addressBookRecord, kABPersonPhoneProperty))!
         for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
             var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
-            var myString = extractABPhoneNumber(phoneAdd)
-            NSLog("phone: \(myString)")
+            var myPhone = extractABPhoneNumber(phoneAdd)
+            
+            var c : ABContact = ABContact()
+            c.name = name
+            c.phoneNumber = myPhone as NSString!
+            addressBookArray.addObject(c)
+            
         }
     }
     
