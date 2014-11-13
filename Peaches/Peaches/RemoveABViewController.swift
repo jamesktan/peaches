@@ -8,14 +8,23 @@
 
 import UIKit
 
-class RemoveABViewController: UIViewController {
+class RemoveABViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var ab_removeTable: UITableView!
-    
+    var ab : NSMutableArray = []
+    var ab_selected : NSMutableArray = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        ab_removeTable.delegate = self
+        ab_removeTable.dataSource = self
+        
+        ab = ABManager.sharedInstance.fetchAddressBookContacts()
+        ab_removeTable.reloadData()
+
     }
 
     @IBAction func a_dismiss(sender: AnyObject) {
@@ -32,14 +41,57 @@ class RemoveABViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    /**
+    *  
+    /**
+    *
     */
-
+    */
+    // MARK: - Table View Delegates
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ab.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        // Create the Cell
+        var cell : UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ab.objectAtIndex(indexPath.row).phoneNumber? )
+        
+        // Create the Labels
+        cell.textLabel.text = ab.objectAtIndex(indexPath.row).name as NSString!
+        cell.detailTextLabel?.text = ab.objectAtIndex(indexPath.row).phoneNumber as NSString!
+        
+        // Style the Cell
+        cell.backgroundColor = UIColor.clearColor()
+        cell.textLabel.textColor = UIColor.whiteColor()
+        cell.detailTextLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel.font = UIFont(name: "GillSans", size: 16)
+        cell.detailTextLabel?.font = UIFont(name: "GillSans", size: 14)
+        
+        // Toggle the Right Cell
+        var abSelectedArray : Array = ab_selected as Array!
+        var c = abSelectedArray.filter({$0.phoneNumber == cell.reuseIdentifier})
+        if (c.count > 0) {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var cell : UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+        if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            ab_selected.removeObject(ab.objectAtIndex(indexPath.row))
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            ab_selected.addObject(ab.objectAtIndex(indexPath.row))
+        }
+        
+        ab_removeTable.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+    }
 }
