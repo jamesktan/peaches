@@ -43,11 +43,32 @@ class ABManager: NSObject {
     */
     func fetchAddressBookContacts() -> NSMutableArray {
         if (addressBookArray.count == 0) {
-            addressBookArray = getAddressBookNames()
+            getAddressBookNames()
         }
         return addressBookArray
     }
+    func deleteAddressBookContacts() {
+        addressBookArray.removeAllObjects()
+    }
+    func convertPhoneNumber(person: ABContact) {
+        
+    }
+    func revertPhoneNumber(person:ABContact) {
+        
+    }
     
+    
+    /**
+    /**
+    Description
+    */
+    */
+    
+    
+    /**
+    getAddressBookNames
+    Purpose: to get access to the user's addressbook.
+    */
     func getAddressBookNames() {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
         if (authorizationStatus == ABAuthorizationStatus.NotDetermined)
@@ -73,29 +94,40 @@ class ABManager: NSObject {
         }
     }
     
+    /**
+    processContactNames
+    Purpose: to generate contacts for the addressbook
+    */
     func processContactNames()
     {
         var errorRef: Unmanaged<CFError>?
         var addressBook: ABAddressBookRef? = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
         
+        // Compose a List of Contacts
         var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
-        println("records in the array \(contactList.count)")
-        
+
+        // Process the Records
         for record:ABRecordRef in contactList {
             processAddressbookRecord(record)
-            
-            var v : ABContact = ABContact()
-            
-            
-            NSLog("--------")
         }
     }
     
+    /**
+    processAddressbookRecord
+    
+    :param: addressBookRecord ABRecordRef - an AddressBook Framework object for a Contact
+    */
     func processAddressbookRecord(addressBookRecord: ABRecordRef) {
         var contactName: String = ABRecordCopyCompositeName(addressBookRecord).takeRetainedValue() as NSString
         processPhone(addressBookRecord, name: contactName)
     }
     
+    /**
+    processPhone
+    
+    :param: addressBookRecord ABRecordRef - an AddressBook Framework Object for a Contact
+    :param: name              NSString - the name of the contact to whome the number belongs to
+    */
     func processPhone(addressBookRecord:ABRecordRef, name: NSString) {
         let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(addressBookRecord, kABPersonPhoneProperty))!
         for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
