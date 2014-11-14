@@ -69,14 +69,15 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        var contact = ab.objectAtIndex(indexPath.row) as ABContact
+        
         // Create the Cell
-        var cell : UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: ab.objectAtIndex(indexPath.row).phoneNumber? )
+        var cell : UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: contact.name)
         
         // Create the Labels
-        cell.textLabel.text = ab.objectAtIndex(indexPath.row).name as NSString!
-        var a : NSArray = ab.objectAtIndex(indexPath.row) as NSArray
-        var details : NSString = a.componentsJoinedByString(", ") as NSString!
-        cell.detailTextLabel?.text = details
+        cell.textLabel.text = contact.name as NSString!
+        cell.detailTextLabel?.text = contact.phoneNumber.objectAtIndex(0) as NSString
+        
         
         // Style the Cell
         cell.backgroundColor = UIColor.clearColor()
@@ -87,7 +88,7 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         
         // Toggle the Right Cell
         var abSelectedArray : Array = ab_selected as Array!
-        var c = abSelectedArray.filter({$0.phoneNumber == cell.reuseIdentifier})
+        var c = abSelectedArray.filter({$0.name == cell.reuseIdentifier})
         if (c.count > 0) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }

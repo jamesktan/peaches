@@ -35,6 +35,11 @@ class ABManager: NSObject {
         return Static.instance
     }
     
+    /**
+    fetchBeginningString
+    
+    :returns: Pass back the stored value of the string or don't pass back anything. In the process, set the state variable.
+    */
     func fetchBeginningString() -> NSString! {
         var x : NSString = NSString(string:"None")
         
@@ -47,6 +52,12 @@ class ABManager: NSObject {
             return x
         }
     }
+    
+    /**
+    setBeginningString
+    
+    :param: string NSString or string to store in the defaults
+    */
     func setBeginningString(string: NSString) {
         beginningString = string
         
