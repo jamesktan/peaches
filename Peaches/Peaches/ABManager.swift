@@ -125,6 +125,18 @@ class ABManager: NSObject {
     
     func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
         
+        let labelDict : NSDictionary = NSDictionary(objects: [kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel,kABPersonPhoneMobileLabel, kABPersonPhoneMainLabel, kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel, kABPersonPhonePagerLabel, kABPersonPhoneOtherFAXLabel, kABPersonPhoneIPhoneLabel], forKeys: ["_$!<Home>!$_", "_$!<Work>!$_", "_$!<Mobile>!$_","_$!<Main>!$_", "_$!<WomeFAX>!$_", "_$!<WorkFAX>!$_", "_$!<Pager>!$_", "_$!<Other>!$_","iPhone"])
+        
+///       _$!<Home>!$_
+//        _$!<Work>!$_
+//        iPhone
+//        _$!<Mobile>!$_
+//        _$!<Main>!$_
+//        _$!<HomeFAX>!$_
+//        _$!<WorkFAX>!$_
+//        _$!<Pager>!$_
+//        _$!<Other>!$_
+        
         // Get the phoneArray
         let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(record, kABPersonPhoneProperty))!
         var list : NSMutableArray = []
@@ -135,10 +147,6 @@ class ABManager: NSObject {
 
             var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
             var phoneLabelString = phoneLabel.takeUnretainedValue() as NSString!
-            println(phoneLabelString)
-            if phoneLabelString.isEqualToString("_$!<Mobile>!$_") {
-                println("FOUND!!!")
-            }
             
             list.addObject(myPhone)
             listLabel.addObject(phoneLabelString)
@@ -156,7 +164,7 @@ class ABManager: NSObject {
         // Compose the new ABRecord Phone List
         var phoneNumberMV : ABMutableMultiValueRef = createMultiStringRef()
         for num in newList {
-            ABMultiValueAddValueAndLabel(phoneNumberMV , num , kABPersonPhoneMobileLabel, nil);
+            ABMultiValueAddValueAndLabel(phoneNumberMV , num , labelDict.objectForK, nil);
         }
 
         
