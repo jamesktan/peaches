@@ -78,7 +78,6 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel.text = contact.name as NSString!
         cell.detailTextLabel?.text = contact.phoneNumber.objectAtIndex(0) as NSString
         
-        
         // Style the Cell
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel.textColor = UIColor.whiteColor()

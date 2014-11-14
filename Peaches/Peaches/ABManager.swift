@@ -77,16 +77,61 @@ class ABManager: NSObject {
         }
         return addressBookArray
     }
+    
+    /**
+    deleteAddressBookContacts
+    Purpose: Deletes all local contacts. Used only for debugging.
+    */
     func deleteAddressBookContacts() {
         addressBookArray.removeAllObjects()
     }
+    
+    
     func convertPhoneNumber(person: ABContact) {
         
+        // Get the AddressBook
+        var errorRef: Unmanaged<CFError>?
+        var addressBook: ABAddressBookRef? = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
+
+        // Copy All the Individuals
+        var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
+        
+        // Find the contact
+        // @jtan : Use Predicates for this in the future.
+        for record:ABRecordRef in contactList {
+            //Verify Name
+            var contactName: NSString = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
+            if contactName.isEqualToString(person.name) {
+                NSLog("Found Name")
+                //Verify Number
+                var contactPhone : NSArray = processPhoneList(record, name: contactName) as NSArray
+                if person.phoneNumber.isEqualToArray(contactPhone) {
+                    
+                    // FOUND RECORD MATCH
+                    // EDIT
+                    // REPLACE
+                    var newRecord : ABRecordRef = convertPhoneNumberHelper(record)
+                    
+                    ABAddressBookRemoveRecord(addressBook, record, &errorRef)
+                    ABAddressBookAddRecord(addressBook, record, &errorRef)
+                    
+                    break
+                }
+                
+            }
+        }
+        
     }
+    
+    func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
+        return record
+    }
+    
     func revertPhoneNumber(person:ABContact) {
         
     }
     
+
     
     /**
     /**
@@ -173,6 +218,26 @@ class ABManager: NSObject {
         c.phoneNumber = list
         addressBookArray.addObject(c)
 
+    }
+    
+    /**
+    processPhoneList
+    
+    :param: addressBookRecord ABRecordRef - an AddressBook Framework Object for a Contact
+    :param: name              NSString - the name of the contact to whom the number belongs
+    
+    :returns: NSMutableArray - A list of phone numbers
+    */
+    func processPhoneList(addressBookRecord:ABRecordRef, name: NSString) ->NSMutableArray {
+        let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(addressBookRecord, kABPersonPhoneProperty))!
+        
+        var list : NSMutableArray = []
+        for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
+            var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
+            var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
+            list.addObject(myPhone)
+        }
+        return list
     }
     
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
