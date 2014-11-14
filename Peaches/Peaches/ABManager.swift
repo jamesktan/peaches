@@ -124,8 +124,9 @@ class ABManager: NSObject {
     }
     
     func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
-        
-        let labelDict : NSDictionary = NSDictionary(objects: [kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel,kABPersonPhoneMobileLabel, kABPersonPhoneMainLabel, kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel, kABPersonPhonePagerLabel, kABPersonPhoneOtherFAXLabel, kABPersonPhoneIPhoneLabel], forKeys: ["_$!<Home>!$_", "_$!<Work>!$_", "_$!<Mobile>!$_","_$!<Main>!$_", "_$!<WomeFAX>!$_", "_$!<WorkFAX>!$_", "_$!<Pager>!$_", "_$!<Other>!$_","iPhone"])
+        var errorRef: Unmanaged<CFError>
+
+        let labelDict : NSDictionary = NSDictionary(objects: [kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel,kABPersonPhoneMobileLabel, kABPersonPhoneMainLabel, kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel, kABPersonPhonePagerLabel, kABPersonPhoneOtherFAXLabel, kABPersonPhoneIPhoneLabel], forKeys: ["_$!<Home>!$_", "_$!<Work>!$_", "_$!<Mobile>!$_","_$!<Main>!$_", "_$!<HomeFAX>!$_", "_$!<WorkFAX>!$_", "_$!<Pager>!$_", "_$!<Other>!$_","iPhone"])
         
 ///       _$!<Home>!$_
 //        _$!<Work>!$_
@@ -163,10 +164,14 @@ class ABManager: NSObject {
 
         // Compose the new ABRecord Phone List
         var phoneNumberMV : ABMutableMultiValueRef = createMultiStringRef()
-        for num in newList {
-            ABMultiValueAddValueAndLabel(phoneNumberMV , num , labelDict.objectForK, nil);
+        for (var i = 0; i < newList.count ; ++i) {
+            var label : CFString = listLabel.objectAtIndex(i) as CFString
+            var labelPass: AnyObject? = labelDict.objectForKey(label)
+            ABMultiValueAddValueAndLabel(phoneNumberMV , newList.objectAtIndex(i) , labelPass as CFString, nil);
         }
-
+        
+        ABRecordRemoveValue(record, kABPersonPhoneProperty, nil)
+        ABRecordSetValue(record, kABPersonPhoneProperty, phoneNumberMV, nil)
         
         return record
     }
