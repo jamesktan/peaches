@@ -112,7 +112,7 @@ class ABManager: NSObject {
                     // REPLACE
                     var newRecord : ABRecordRef = convertPhoneNumberHelper(record)
                     
-                    ABAddressBookRemoveRecord(addressBook, record, &errorRef)
+//                    ABAddressBookRemoveRecord(addressBook, record, &errorRef)
                     ABAddressBookAddRecord(addressBook, newRecord, &errorRef)
                     
                     break
@@ -120,13 +120,13 @@ class ABManager: NSObject {
                 
             }
         }
-        ABAddressBookSave(addressBook, nil)
+        ABAddressBookSave(addressBook,&errorRef)
     }
     
     func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
         var errorRef: Unmanaged<CFError>
 
-        let labelDict : NSDictionary = NSDictionary(objects: [kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel,kABPersonPhoneMobileLabel, kABPersonPhoneMainLabel, kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel, kABPersonPhonePagerLabel, kABPersonPhoneOtherFAXLabel, kABPersonPhoneIPhoneLabel], forKeys: ["_$!<Home>!$_", "_$!<Work>!$_", "_$!<Mobile>!$_","_$!<Main>!$_", "_$!<HomeFAX>!$_", "_$!<WorkFAX>!$_", "_$!<Pager>!$_", "_$!<Other>!$_","iPhone"])
+        let labelDict : NSDictionary = NSDictionary(objects: ["Home", "Work", kABPersonPhoneMobileLabel, kABPersonPhoneMainLabel, kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel, kABPersonPhonePagerLabel, kABPersonPhoneOtherFAXLabel, kABPersonPhoneIPhoneLabel, "Work", "Home"], forKeys: ["_$!<Home>!$_", "_$!<Work>!$_", "_$!<Mobile>!$_","_$!<Main>!$_", "_$!<HomeFAX>!$_", "_$!<WorkFAX>!$_", "_$!<Pager>!$_", "_$!<Other>!$_","iPhone", "Work", "Home"])
         
 ///       _$!<Home>!$_
 //        _$!<Work>!$_
