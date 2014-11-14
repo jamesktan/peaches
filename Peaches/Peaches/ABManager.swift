@@ -17,14 +17,13 @@ extension UIViewController {
 
 class ABContact : NSObject {
     var name : NSString = ""
-    var phoneNumber : NSString = ""
+    var phoneNumber : NSArray = []
 }
 
 class ABManager: NSObject {
     
     var beginningString : NSString = ""
     var endingString : NSString = "#"
-    
     var addressBookArray : NSMutableArray = []
     
     /// Singleton Design Pattern
@@ -150,16 +149,19 @@ class ABManager: NSObject {
     */
     func processPhone(addressBookRecord:ABRecordRef, name: NSString) {
         let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(addressBookRecord, kABPersonPhoneProperty))!
+        
+        var list : NSMutableArray = []
         for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
             var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
-            var myPhone = extractABPhoneNumber(phoneAdd)
-            
-            var c : ABContact = ABContact()
-            c.name = name
-            c.phoneNumber = myPhone as NSString!
-            addressBookArray.addObject(c)
-            
+            var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
+            list.addObject(myPhone)
         }
+        
+        var c : ABContact = ABContact()
+        c.name = name
+        c.phoneNumber = list
+        addressBookArray.addObject(c)
+
     }
     
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {

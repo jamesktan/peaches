@@ -74,7 +74,10 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Create the Labels
         cell.textLabel.text = ab.objectAtIndex(indexPath.row).name as NSString!
-        cell.detailTextLabel?.text = ab.objectAtIndex(indexPath.row).phoneNumber as NSString!
+        
+        var a : NSArray = ab.objectAtIndex(indexPath.row) as NSArray
+        var details : NSString = a.componentsJoinedByString(", ") as NSString!
+        cell.detailTextLabel?.text = details
         
         // Style the Cell
         cell.backgroundColor = UIColor.clearColor()
