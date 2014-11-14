@@ -113,14 +113,14 @@ class ABManager: NSObject {
                     var newRecord : ABRecordRef = convertPhoneNumberHelper(record)
                     
                     ABAddressBookRemoveRecord(addressBook, record, &errorRef)
-                    ABAddressBookAddRecord(addressBook, record, &errorRef)
+                    ABAddressBookAddRecord(addressBook, newRecord, &errorRef)
                     
                     break
                 }
                 
             }
         }
-        
+        ABAddressBookSave(addressBook, nil)
     }
     
     func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
