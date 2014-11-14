@@ -134,7 +134,11 @@ class ABManager: NSObject {
             var phoneLabel = ABMultiValueCopyLabelAtIndex(phoneArray, j);
 
             var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
-            var phoneLabelString = phoneLabel.takeUnretainedValue()
+            var phoneLabelString = phoneLabel.takeUnretainedValue() as NSString!
+            println(phoneLabelString)
+            if phoneLabelString.isEqualToString("_$!<Mobile>!$_") {
+                println("FOUND!!!")
+            }
             
             list.addObject(myPhone)
             listLabel.addObject(phoneLabelString)
