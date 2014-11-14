@@ -124,6 +124,38 @@ class ABManager: NSObject {
     }
     
     func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
+        
+        // Get the phoneArray
+        let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(record, kABPersonPhoneProperty))!
+        var list : NSMutableArray = []
+        var listLabel : NSMutableArray = []
+        for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
+            var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
+            var phoneLabel = ABMultiValueCopyLabelAtIndex(phoneArray, j);
+
+            var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
+            var phoneLabelString = phoneLabel.takeUnretainedValue()
+            
+            list.addObject(myPhone)
+            listLabel.addObject(phoneLabelString)
+        }
+        
+        // Create the New List
+        var newList : NSMutableArray = []
+        for number in list {
+            var numarr : NSArray = number.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            var stringNoPrefix : NSString = numarr.componentsJoinedByString("")
+            var string : NSString = NSString(string: beginningString + stringNoPrefix + endingString)
+            newList.addObject(string)
+        }
+
+        // Compose the new ABRecord Phone List
+        var phoneNumberMV : ABMutableMultiValueRef = createMultiStringRef()
+        for num in newList {
+            ABMultiValueAddValueAndLabel(phoneNumberMV , num , kABPersonPhoneMobileLabel, nil);
+        }
+
+        
         return record
     }
     
@@ -258,5 +290,11 @@ class ABManager: NSObject {
         }
         return nil
     }
+    
+    func createMultiStringRef() -> ABMutableMultiValueRef {
+        let propertyType: NSNumber = kABMultiStringPropertyType
+        return Unmanaged.fromOpaque(ABMultiValueCreateMutable(propertyType.unsignedIntValue).toOpaque()).takeUnretainedValue() as NSObject as ABMultiValueRef
+    }
+
 
 }
