@@ -155,6 +155,10 @@ class ABManager: NSObject {
                 // False - Revert
                 var numarr : NSArray = number.componentsSeparatedByString("#")
                 var string : NSString =  numarr.objectAtIndex(1) as NSString
+                
+                // Remove the string's country code, should be the first 3 numbers
+                var range : NSRange = NSMakeRange(0,3);
+                string = string.stringByReplacingCharactersInRange(range, withString: "")
                 newList.addObject(string)
             }
         }
@@ -171,16 +175,11 @@ class ABManager: NSObject {
         
         return record
     }
-    
-    func revertPhoneNumber(person:ABContact) {
-        
-    }
-    
 
     
     /**
     /**
-    Description
+    Below this are some lower level functions
     */
     */
     
