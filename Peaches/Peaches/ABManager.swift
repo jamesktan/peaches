@@ -100,9 +100,16 @@ class ABManager: NSObject {
     func fetchAddressBookContacts() -> NSMutableArray {
         deleteAddressBookContacts()
         getAddressBookNames()
-        return addressBookArray
+        
+        var a = addressBookArray as Array!
+        a.sort({ $1.name > $0.name })
+        var c : NSMutableArray = NSMutableArray(array: a)
+        
+        return c
     }
-    
+    func sortAB(d1:ABContact, d2:ABContact) -> NSComparisonResult {
+        return d1.name.caseInsensitiveCompare(d2.name)
+    }
     /**
     deleteAddressBookContacts
     Purpose: Deletes all local contacts. Used only for debugging.
@@ -288,6 +295,7 @@ class ABManager: NSObject {
             } else if nick != nil {
                 processAddressbookRecord(record)
             } else {
+                
                 println("JTAN: contact has no name")
             }
         }
