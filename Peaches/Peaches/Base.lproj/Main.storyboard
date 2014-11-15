@@ -878,9 +878,9 @@
                     <navigationItem key="navigationItem" id="BCg-pn-m7Z"/>
                     <connections>
                         <segue destination="pdm-si-ezh" kind="presentation" identifier="editCredentials" id="aP4-HU-taQ"/>
-                        <segue destination="QeL-Zu-fIf" kind="presentation" identifier="convertAB" id="4EZ-Fd-T5c"/>
-                        <segue destination="wKx-qf-mut" kind="presentation" identifier="removeAB" id="uqh-nk-ND2"/>
-                        <segue destination="HdU-si-86I" kind="presentation" identifier="howTo" id="BTN-5z-lVe"/>
+                        <segue destination="QeL-Zu-fIf" kind="presentation" identifier="convertAB" modalTransitionStyle="flipHorizontal" id="4EZ-Fd-T5c"/>
+                        <segue destination="wKx-qf-mut" kind="presentation" identifier="removeAB" modalTransitionStyle="flipHorizontal" id="uqh-nk-ND2"/>
+                        <segue destination="HdU-si-86I" kind="presentation" identifier="howTo" modalTransitionStyle="coverVertical" id="BTN-5z-lVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
