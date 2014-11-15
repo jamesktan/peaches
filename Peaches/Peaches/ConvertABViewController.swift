@@ -48,9 +48,9 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
 
         }
         
-        //OTHERWISE!
+        // True - Convert the Number
         for bee in ab_selected {
-            ABManager.sharedInstance.convertPhoneNumber(bee as ABContact)
+            ABManager.sharedInstance.convertPhoneNumber(bee as ABContact, flag: true)
         }
         self.dismissViewControllerAnimated(true, completion: {
             UIAlertView(title: "Success!", message: "You successfully converted your contacts!", delegate: nil, cancelButtonTitle: "Okay").show()

@@ -40,9 +40,11 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         
+        // False - Revert the Number
         for bee in ab_selected {
-            ABManager.sharedInstance.revertPhoneNumber(bee as ABContact)
+            ABManager.sharedInstance.convertPhoneNumber(bee as ABContact, flag: false)
         }
+        
         self.dismissViewControllerAnimated(true, completion: {
             UIAlertView(title: "Success!", message: "You successfully reverted your contacts!", delegate: nil, cancelButtonTitle: "Okay").show()
         })

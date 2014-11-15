@@ -87,7 +87,7 @@ class ABManager: NSObject {
     }
     
     
-    func convertPhoneNumber(person: ABContact) {
+    func convertPhoneNumber(person: ABContact, flag:Bool) {
         
         // Get the AddressBook
         var errorRef: Unmanaged<CFError>?
@@ -111,7 +111,8 @@ class ABManager: NSObject {
                     // EDIT
                     // REPLACE
                     // @jtan: Turns out, you don't need to delete any records.
-                    var newRecord : ABRecordRef = convertPhoneNumberHelper(record)
+                    
+                    var newRecord : ABRecordRef = convertPhoneNumberHelper(record, flag: flag)
                     
                     ABAddressBookAddRecord(addressBook, newRecord, &errorRef)
                     
@@ -123,7 +124,7 @@ class ABManager: NSObject {
         ABAddressBookSave(addressBook,&errorRef)
     }
     
-    func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
+    func convertPhoneNumberHelper(record: ABRecordRef, flag: Bool) -> ABRecordRef {
         var errorRef: Unmanaged<CFError>
         
         // Get the phoneArray
@@ -144,10 +145,18 @@ class ABManager: NSObject {
         // Create the New List
         var newList : NSMutableArray = []
         for number in list {
-            var numarr : NSArray = number.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
-            var stringNoPrefix : NSString = numarr.componentsJoinedByString("")
-            var string : NSString = NSString(string: beginningString + stringNoPrefix + endingString)
-            newList.addObject(string)
+            if (flag) {
+                // True - Convert
+                var numarr : NSArray = number.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+                var stringNoPrefix : NSString = numarr.componentsJoinedByString("")
+                var string : NSString = NSString(string: beginningString + stringNoPrefix + endingString)
+                newList.addObject(string)
+            } else {
+                // False - Revert
+                var numarr : NSArray = number.componentsSeparatedByString("#")
+                var string : NSString =  numarr.objectAtIndex(1) as NSString
+                newList.addObject(string)
+            }
         }
 
         // Compose the new ABRecord Phone List
