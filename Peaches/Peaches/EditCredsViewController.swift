@@ -45,6 +45,10 @@ class EditCredsViewController: UIViewController {
 
     }
     
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        tf_all.map({$0.resignFirstResponder()})
+
+    }
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         tf_all.map({$0.resignFirstResponder()})
     }

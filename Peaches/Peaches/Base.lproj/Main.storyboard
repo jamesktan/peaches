@@ -974,7 +974,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="DVI-1J-Jfy"/>
@@ -989,6 +989,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="a_updateTextEvents:" destination="pdm-si-ezh" eventType="valueChanged" id="Z1J-vy-Xtp"/>
+                                    <action selector="dismissKeyboard:" destination="pdm-si-ezh" eventType="editingDidEndOnExit" id="CV4-f7-gnu"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="eg (7342)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S2g-rW-jJa">
@@ -1000,7 +1001,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Vhy-af-lkL"/>
@@ -1015,6 +1016,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="a_updateTextEvents:" destination="pdm-si-ezh" eventType="valueChanged" id="jV2-fY-MdT"/>
+                                    <action selector="dismissKeyboard:" destination="pdm-si-ezh" eventType="editingDidEndOnExit" id="fPi-Z1-g0F"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000,734224#001" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="CWj-za-Jsi">
@@ -1123,7 +1125,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Ezu-EX-Mmk"/>
@@ -1138,6 +1140,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="a_updateTextEvents:" destination="pdm-si-ezh" eventType="valueChanged" id="oFc-pU-YQv"/>
+                                    <action selector="dismissKeyboard:" destination="pdm-si-ezh" eventType="editingDidEndOnExit" id="svv-Cb-i22"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfT-S9-Xxi">
@@ -1171,7 +1174,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="OvI-YI-RuI"/>
@@ -1186,6 +1189,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="a_updateTextEvents:" destination="pdm-si-ezh" eventType="valueChanged" id="TEK-nb-Wem"/>
+                                    <action selector="dismissKeyboard:" destination="pdm-si-ezh" eventType="editingDidEndOnExit" id="cn4-UN-vEE"/>
                                 </connections>
                             </textField>
                         </subviews>
