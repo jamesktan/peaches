@@ -315,7 +315,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="294"/>
                                     </constraint>
                                 </constraints>
-                                <string key="text">1. Edit Your Credentials By editing your credentials, we'll be able to populate the new phone number to dial in your address book.  2. Select Your Contacts Select contacts that you want to apply this numbering scheme to. You may want to apply this to some contacts or all contacts. In either case, the original number will be replaced with the reformatted one.  3. Make Calls Normally Afterwards, just go ahead and make phone calls normally. You'll automatically be routed through your organization's call accounting system as per your credentials. When you're done, just go through the application to revert those numbers.</string>
+                                <mutableString key="text">1. Edit Your Credentials Input the user data from your provider that will construct the call prefix.  2. Select Your Contacts Select contacts that you want to get this prefix. This application will edit their numbers in your address book.  3. Call People Normally Make phone calls through your phone application normally. When you're done, use this app to revert your changes.</mutableString>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
