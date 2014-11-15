@@ -28,6 +28,7 @@
 		54E089C11A17991900BDC644 /* PeachInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E089C01A17991900BDC644 /* PeachInterfaceTests.swift */; };
 		54E089C41A17991900BDC644 /* PeachInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; };
 		54E089C51A17991900BDC644 /* PeachInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		54E089CE1A17995000BDC644 /* PeachButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E089CD1A17995000BDC644 /* PeachButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		54E089B71A17991900BDC644 /* PeachInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeachInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E089BF1A17991900BDC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54E089C01A17991900BDC644 /* PeachInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeachInterfaceTests.swift; sourceTree = "<group>"; };
+		54E089CD1A17995000BDC644 /* PeachButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeachButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			children = (
 				54E089B11A17991900BDC644 /* PeachInterface.h */,
 				54E089AF1A17991900BDC644 /* Supporting Files */,
+				54E089CD1A17995000BDC644 /* PeachButton.swift */,
 			);
 			name = PeachInterface;
 			path = ../PeachInterface;
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E089CE1A17995000BDC644 /* PeachButton.swift in Sources */,
 				54BCEAA11A13FCAC00259549 /* ABManager.swift in Sources */,
 				541034F41A1255C600D4EB09 /* AppDelegate.swift in Sources */,
 				54BCEA9B1A13F69C00259549 /* EditCredsViewController.swift in Sources */,
