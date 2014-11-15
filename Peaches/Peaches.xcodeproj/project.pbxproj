@@ -23,6 +23,11 @@
 		54BCEAA51A13FF8E00259549 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCEAA41A13FF8E00259549 /* MainViewController.swift */; };
 		54E089A51A14180400BDC644 /* peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089A41A14180400BDC644 /* peach.png */; };
 		54E089A71A1563B700BDC644 /* peach2.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089A61A1563B700BDC644 /* peach2.png */; };
+		54E089B21A17991900BDC644 /* PeachInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E089B11A17991900BDC644 /* PeachInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54E089B81A17991900BDC644 /* PeachInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; };
+		54E089C11A17991900BDC644 /* PeachInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E089C01A17991900BDC644 /* PeachInterfaceTests.swift */; };
+		54E089C41A17991900BDC644 /* PeachInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; };
+		54E089C51A17991900BDC644 /* PeachInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +38,42 @@
 			remoteGlobalIDString = 541034ED1A1255C600D4EB09;
 			remoteInfo = Peaches;
 		};
+		54E089B91A17991900BDC644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 541034E61A1255C500D4EB09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54E089AC1A17991900BDC644;
+			remoteInfo = PeachInterface;
+		};
+		54E089BB1A17991900BDC644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 541034E61A1255C500D4EB09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 541034ED1A1255C600D4EB09;
+			remoteInfo = Peaches;
+		};
+		54E089C21A17991900BDC644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 541034E61A1255C500D4EB09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54E089AC1A17991900BDC644;
+			remoteInfo = PeachInterface;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		54E089C91A17991900BDC644 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				54E089C51A17991900BDC644 /* PeachInterface.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		541034EE1A1255C600D4EB09 /* Peaches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peaches.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +96,12 @@
 		54BCEAA41A13FF8E00259549 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		54E089A41A14180400BDC644 /* peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peach.png; sourceTree = "<group>"; };
 		54E089A61A1563B700BDC644 /* peach2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peach2.png; sourceTree = "<group>"; };
+		54E089AD1A17991900BDC644 /* PeachInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeachInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E089B01A17991900BDC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E089B11A17991900BDC644 /* PeachInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeachInterface.h; sourceTree = "<group>"; };
+		54E089B71A17991900BDC644 /* PeachInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeachInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E089BF1A17991900BDC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E089C01A17991900BDC644 /* PeachInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeachInterfaceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E089C41A17991900BDC644 /* PeachInterface.framework in Frameworks */,
 				544B13921A126D1E00FC0E2F /* AddressBookUI.framework in Frameworks */,
 				544B13901A126D1A00FC0E2F /* AddressBook.framework in Frameworks */,
 			);
@@ -72,6 +119,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E089A91A17991900BDC644 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E089B41A17991900BDC644 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E089B81A17991900BDC644 /* PeachInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +154,8 @@
 			children = (
 				541034EE1A1255C600D4EB09 /* Peaches.app */,
 				541035061A1255C600D4EB09 /* PeachesTests.xctest */,
+				54E089AD1A17991900BDC644 /* PeachInterface.framework */,
+				54E089B71A17991900BDC644 /* PeachInterfaceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +184,8 @@
 		541034F11A1255C600D4EB09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54E089AE1A17991900BDC644 /* PeachInterface */,
+				54E089BD1A17991900BDC644 /* PeachInterfaceTests */,
 				544B13911A126D1E00FC0E2F /* AddressBookUI.framework */,
 				544B138F1A126D1A00FC0E2F /* AddressBook.framework */,
 				541034F21A1255C600D4EB09 /* Info.plist */,
@@ -144,7 +210,54 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		54E089AE1A17991900BDC644 /* PeachInterface */ = {
+			isa = PBXGroup;
+			children = (
+				54E089B11A17991900BDC644 /* PeachInterface.h */,
+				54E089AF1A17991900BDC644 /* Supporting Files */,
+			);
+			name = PeachInterface;
+			path = ../PeachInterface;
+			sourceTree = "<group>";
+		};
+		54E089AF1A17991900BDC644 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54E089B01A17991900BDC644 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54E089BD1A17991900BDC644 /* PeachInterfaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				54E089C01A17991900BDC644 /* PeachInterfaceTests.swift */,
+				54E089BE1A17991900BDC644 /* Supporting Files */,
+			);
+			name = PeachInterfaceTests;
+			path = ../PeachInterfaceTests;
+			sourceTree = "<group>";
+		};
+		54E089BE1A17991900BDC644 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54E089BF1A17991900BDC644 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		54E089AA1A17991900BDC644 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E089B21A17991900BDC644 /* PeachInterface.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		541034ED1A1255C600D4EB09 /* Peaches */ = {
@@ -154,10 +267,12 @@
 				541034EA1A1255C600D4EB09 /* Sources */,
 				541034EB1A1255C600D4EB09 /* Frameworks */,
 				541034EC1A1255C600D4EB09 /* Resources */,
+				54E089C91A17991900BDC644 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				54E089C31A17991900BDC644 /* PBXTargetDependency */,
 			);
 			name = Peaches;
 			productName = Peaches;
@@ -182,6 +297,43 @@
 			productReference = 541035061A1255C600D4EB09 /* PeachesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		54E089AC1A17991900BDC644 /* PeachInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54E089C61A17991900BDC644 /* Build configuration list for PBXNativeTarget "PeachInterface" */;
+			buildPhases = (
+				54E089A81A17991900BDC644 /* Sources */,
+				54E089A91A17991900BDC644 /* Frameworks */,
+				54E089AA1A17991900BDC644 /* Headers */,
+				54E089AB1A17991900BDC644 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeachInterface;
+			productName = PeachInterface;
+			productReference = 54E089AD1A17991900BDC644 /* PeachInterface.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		54E089B61A17991900BDC644 /* PeachInterfaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54E089CA1A17991900BDC644 /* Build configuration list for PBXNativeTarget "PeachInterfaceTests" */;
+			buildPhases = (
+				54E089B31A17991900BDC644 /* Sources */,
+				54E089B41A17991900BDC644 /* Frameworks */,
+				54E089B51A17991900BDC644 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54E089BA1A17991900BDC644 /* PBXTargetDependency */,
+				54E089BC1A17991900BDC644 /* PBXTargetDependency */,
+			);
+			name = PeachInterfaceTests;
+			productName = PeachInterfaceTests;
+			productReference = 54E089B71A17991900BDC644 /* PeachInterfaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,6 +348,14 @@
 						DevelopmentTeam = CUYMUDSGA4;
 					};
 					541035051A1255C600D4EB09 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 541034ED1A1255C600D4EB09;
+					};
+					54E089AC1A17991900BDC644 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = CUYMUDSGA4;
+					};
+					54E089B61A17991900BDC644 = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 541034ED1A1255C600D4EB09;
 					};
@@ -216,6 +376,8 @@
 			targets = (
 				541034ED1A1255C600D4EB09 /* Peaches */,
 				541035051A1255C600D4EB09 /* PeachesTests */,
+				54E089AC1A17991900BDC644 /* PeachInterface */,
+				54E089B61A17991900BDC644 /* PeachInterfaceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,6 +396,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		541035041A1255C600D4EB09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E089AB1A17991900BDC644 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E089B51A17991900BDC644 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +442,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		54E089A81A17991900BDC644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E089B31A17991900BDC644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E089C11A17991900BDC644 /* PeachInterfaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -273,6 +464,21 @@
 			isa = PBXTargetDependency;
 			target = 541034ED1A1255C600D4EB09 /* Peaches */;
 			targetProxy = 541035071A1255C600D4EB09 /* PBXContainerItemProxy */;
+		};
+		54E089BA1A17991900BDC644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54E089AC1A17991900BDC644 /* PeachInterface */;
+			targetProxy = 54E089B91A17991900BDC644 /* PBXContainerItemProxy */;
+		};
+		54E089BC1A17991900BDC644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 541034ED1A1255C600D4EB09 /* Peaches */;
+			targetProxy = 54E089BB1A17991900BDC644 /* PBXContainerItemProxy */;
+		};
+		54E089C31A17991900BDC644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54E089AC1A17991900BDC644 /* PeachInterface */;
+			targetProxy = 54E089C21A17991900BDC644 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -427,6 +633,80 @@
 			};
 			name = Release;
 		};
+		54E089C71A17991900BDC644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeachInterface/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		54E089C81A17991900BDC644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PeachInterface/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		54E089CB1A17991900BDC644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeachInterfaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peaches.app/Peaches";
+			};
+			name = Debug;
+		};
+		54E089CC1A17991900BDC644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeachInterfaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peaches.app/Peaches";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -456,6 +736,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		54E089C61A17991900BDC644 /* Build configuration list for PBXNativeTarget "PeachInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54E089C71A17991900BDC644 /* Debug */,
+				54E089C81A17991900BDC644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		54E089CA1A17991900BDC644 /* Build configuration list for PBXNativeTarget "PeachInterfaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54E089CB1A17991900BDC644 /* Debug */,
+				54E089CC1A17991900BDC644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
