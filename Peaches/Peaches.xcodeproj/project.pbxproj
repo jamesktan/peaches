@@ -29,6 +29,14 @@
 		54E089C41A17991900BDC644 /* PeachInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; };
 		54E089C51A17991900BDC644 /* PeachInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 54E089AD1A17991900BDC644 /* PeachInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		54E089CE1A17995000BDC644 /* PeachButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E089CD1A17995000BDC644 /* PeachButton.swift */; };
+		54E089D51A17A07700BDC644 /* logo29.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089CF1A17A07700BDC644 /* logo29.png */; };
+		54E089D61A17A07700BDC644 /* logo40.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089D01A17A07700BDC644 /* logo40.png */; };
+		54E089D71A17A07700BDC644 /* logo58.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089D11A17A07700BDC644 /* logo58.png */; };
+		54E089D81A17A07700BDC644 /* logo60.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089D21A17A07700BDC644 /* logo60.png */; };
+		54E089D91A17A07700BDC644 /* logo80.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089D31A17A07700BDC644 /* logo80.png */; };
+		54E089DA1A17A07700BDC644 /* logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089D41A17A07700BDC644 /* logo120.png */; };
+		54E089DD1A17A11800BDC644 /* logo87.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089DB1A17A11800BDC644 /* logo87.png */; };
+		54E089DE1A17A11800BDC644 /* logo180.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E089DC1A17A11800BDC644 /* logo180.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +112,14 @@
 		54E089BF1A17991900BDC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54E089C01A17991900BDC644 /* PeachInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeachInterfaceTests.swift; sourceTree = "<group>"; };
 		54E089CD1A17995000BDC644 /* PeachButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeachButton.swift; sourceTree = "<group>"; };
+		54E089CF1A17A07700BDC644 /* logo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo29.png; sourceTree = "<group>"; };
+		54E089D01A17A07700BDC644 /* logo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo40.png; sourceTree = "<group>"; };
+		54E089D11A17A07700BDC644 /* logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo58.png; sourceTree = "<group>"; };
+		54E089D21A17A07700BDC644 /* logo60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo60.png; sourceTree = "<group>"; };
+		54E089D31A17A07700BDC644 /* logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo80.png; sourceTree = "<group>"; };
+		54E089D41A17A07700BDC644 /* logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo120.png; sourceTree = "<group>"; };
+		54E089DB1A17A11800BDC644 /* logo87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo87.png; sourceTree = "<group>"; };
+		54E089DC1A17A11800BDC644 /* logo180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo180.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +202,14 @@
 		541034F11A1255C600D4EB09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54E089DB1A17A11800BDC644 /* logo87.png */,
+				54E089DC1A17A11800BDC644 /* logo180.png */,
+				54E089CF1A17A07700BDC644 /* logo29.png */,
+				54E089D01A17A07700BDC644 /* logo40.png */,
+				54E089D11A17A07700BDC644 /* logo58.png */,
+				54E089D21A17A07700BDC644 /* logo60.png */,
+				54E089D31A17A07700BDC644 /* logo80.png */,
+				54E089D41A17A07700BDC644 /* logo120.png */,
 				54E089AE1A17991900BDC644 /* PeachInterface */,
 				54E089BD1A17991900BDC644 /* PeachInterfaceTests */,
 				544B13911A126D1E00FC0E2F /* AddressBookUI.framework */,
@@ -391,10 +415,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				54E089A71A1563B700BDC644 /* peach2.png in Resources */,
+				54E089D81A17A07700BDC644 /* logo60.png in Resources */,
+				54E089D91A17A07700BDC644 /* logo80.png in Resources */,
+				54E089DA1A17A07700BDC644 /* logo120.png in Resources */,
 				541034FC1A1255C600D4EB09 /* Main.storyboard in Resources */,
+				54E089DD1A17A11800BDC644 /* logo87.png in Resources */,
 				54E089A51A14180400BDC644 /* peach.png in Resources */,
+				54E089D71A17A07700BDC644 /* logo58.png in Resources */,
+				54E089D51A17A07700BDC644 /* logo29.png in Resources */,
 				541035011A1255C600D4EB09 /* LaunchScreen.xib in Resources */,
+				54E089D61A17A07700BDC644 /* logo40.png in Resources */,
 				541034FE1A1255C600D4EB09 /* Images.xcassets in Resources */,
+				54E089DE1A17A11800BDC644 /* logo180.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
