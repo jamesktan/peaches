@@ -125,8 +125,6 @@ class ABManager: NSObject {
     
     func convertPhoneNumberHelper(record: ABRecordRef) -> ABRecordRef {
         var errorRef: Unmanaged<CFError>
-
-//        let labelDict : NSDictionary = NSDictionary(objects: ["Home", "Work", kABPersonPhoneMobileLabel, kABPersonPhoneMainLabel, kABPersonPhoneHomeFAXLabel, kABPersonPhoneWorkFAXLabel, kABPersonPhonePagerLabel, kABPersonPhoneOtherFAXLabel, kABPersonPhoneIPhoneLabel, "Work", "Home"], forKeys: ["_$!<Home>!$_", "_$!<Work>!$_", "_$!<Mobile>!$_","_$!<Main>!$_", "_$!<HomeFAX>!$_", "_$!<WorkFAX>!$_", "_$!<Pager>!$_", "_$!<Other>!$_","iPhone", "Work", "Home"])
         
         // Get the phoneArray
         let phoneArray:ABMultiValueRef = extractABPhoneRef(ABRecordCopyValue(record, kABPersonPhoneProperty))!
@@ -156,7 +154,6 @@ class ABManager: NSObject {
         var phoneNumberMV : ABMutableMultiValueRef = createMultiStringRef()
         for (var i = 0; i < newList.count ; ++i) {
             var label : CFString = listLabel.objectAtIndex(i) as CFString
-//            var labelPass: AnyObject? = labelDict.objectForKey(label)
             ABMultiValueAddValueAndLabel(phoneNumberMV , newList.objectAtIndex(i) , label as CFString, nil);
         }
         
