@@ -179,12 +179,17 @@ class ABManager: NSObject {
             } else {
                 // False - Revert
                 var numarr : NSArray = number.componentsSeparatedByString("#")
-                var string : NSString =  numarr.objectAtIndex(1) as NSString
+                var index = 1
+                if numarr.count < 2 {
+                    index = 0 // if index is 0 we don't have the right string!
+                }
+                var string : NSString =  numarr.objectAtIndex(index) as NSString
                 
                 // Remove the string's country code, should be the first 3 numbers
-                var range : NSRange = NSMakeRange(0,3);
-                string = string.stringByReplacingCharactersInRange(range, withString: "")
-                
+                if index == 1 {
+                    var range : NSRange = NSMakeRange(0,3);
+                    string = string.stringByReplacingCharactersInRange(range, withString: "")
+                }
                 newList.addObject(string)
             }
         }
