@@ -57,13 +57,20 @@ class ABManager: NSObject {
     
     :returns: Tuple(String,String,String,String) - A tuple contained the individual prefix elements that were added.
     */
-    func fetchPrefixParameters() -> (service: NSString, account: NSString, pin: NSString, country: NSString) {
-        var service : NSString = NSUserDefaults.standardUserDefaults().valueForKey("service") as NSString!
-        var account : NSString = NSUserDefaults.standardUserDefaults().valueForKey("account") as NSString!
-        var pin : NSString = NSUserDefaults.standardUserDefaults().valueForKey("pin") as NSString!
-        var country : NSString = NSUserDefaults.standardUserDefaults().valueForKey("country") as NSString!
-        
-        return (service, account, pin, country)
+    func fetchPrefixParameters() -> (service: AnyObject, account: AnyObject, pin: AnyObject, country: AnyObject) {
+        var service : AnyObject? = NSUserDefaults.standardUserDefaults().valueForKey("service")
+        if (service == nil) {service = "" }
+
+        var account : AnyObject? = NSUserDefaults.standardUserDefaults().valueForKey("account")
+        if (account == nil) {account = "" }
+
+        var pin : AnyObject? = NSUserDefaults.standardUserDefaults().valueForKey("pin")
+        if (pin == nil) {pin = "" }
+
+        var country : AnyObject? = NSUserDefaults.standardUserDefaults().valueForKey("country")
+        if (country == nil) {country = "" }
+
+        return (service!, account!, pin!, country!)
     }
     
     /**

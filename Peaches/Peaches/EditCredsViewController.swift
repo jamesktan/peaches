@@ -32,11 +32,12 @@ class EditCredsViewController: UIViewController {
         
         // Set the proper string on setup
         l_stringDisplay.text = ABManager.sharedInstance.fetchBeginningString() as NSString!
+        
         var prefixComponents = ABManager.sharedInstance.fetchPrefixParameters()
-        tf_serviceNumber.text = prefixComponents.service
-        tf_accountNumber.text = prefixComponents.account
-        tf_pinCode.text = prefixComponents.pin
-        tf_countryCode.text = prefixComponents.country
+        tf_serviceNumber.text = prefixComponents.service as NSString
+        tf_accountNumber.text = prefixComponents.account as NSString
+        tf_pinCode.text = prefixComponents.pin as NSString
+        tf_countryCode.text = prefixComponents.country as NSString
 
     }
     
