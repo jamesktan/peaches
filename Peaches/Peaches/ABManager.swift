@@ -72,10 +72,8 @@ class ABManager: NSObject {
     :returns: NSMutableArray of ABContact objects. Each object contains information about the name and phone number for an individual. This is the complete addressbook including converted values.
     */
     func fetchAddressBookContacts() -> NSMutableArray {
-        if (addressBookArray.count == 0) {
-            deleteAddressBookContacts()
-            getAddressBookNames()
-        }
+        deleteAddressBookContacts()
+        getAddressBookNames()
         return addressBookArray
     }
     
