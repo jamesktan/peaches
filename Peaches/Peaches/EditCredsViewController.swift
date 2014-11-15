@@ -26,11 +26,20 @@ class EditCredsViewController: UIViewController {
         // Have them all intercept the trigger
         tf_all.map({$0.addTarget(self, action: "a_updateTextEvents:", forControlEvents: UIControlEvents.EditingChanged)})
         
+    }
+    
+    override func viewWillAppear(animated:Bool) {
+        
         // Set the proper string on setup
         l_stringDisplay.text = ABManager.sharedInstance.fetchBeginningString() as NSString!
-   
-    }
+        var prefixComponents = ABManager.sharedInstance.fetchPrefixParameters()
+        tf_serviceNumber.text = prefixComponents.service
+        tf_accountNumber.text = prefixComponents.account
+        tf_pinCode.text = prefixComponents.pin
+        tf_countryCode.text = prefixComponents.country
 
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         tf_all.map({$0.resignFirstResponder()})
     }
@@ -42,7 +51,7 @@ class EditCredsViewController: UIViewController {
         string = string.stringByAppendingString(tf_countryCode.text)
         l_stringDisplay.text = string
         
-        ABManager.sharedInstance.setBeginningString(string)
+        ABManager.sharedInstance.setBeginningString(string, service: tf_serviceNumber.text, account: tf_accountNumber.text, pin: tf_pinCode.text, country: tf_countryCode.text)
         
     }
 

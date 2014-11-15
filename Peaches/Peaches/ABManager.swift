@@ -52,17 +52,36 @@ class ABManager: NSObject {
             return x
         }
     }
+    /**
+    fetchPrefixParameters
+    
+    :returns: Tuple(String,String,String,String) - A tuple contained the individual prefix elements that were added.
+    */
+    func fetchPrefixParameters() -> (service: NSString, account: NSString, pin: NSString, country: NSString) {
+        var service : NSString = NSUserDefaults.standardUserDefaults().valueForKey("service") as NSString!
+        var account : NSString = NSUserDefaults.standardUserDefaults().valueForKey("account") as NSString!
+        var pin : NSString = NSUserDefaults.standardUserDefaults().valueForKey("pin") as NSString!
+        var country : NSString = NSUserDefaults.standardUserDefaults().valueForKey("country") as NSString!
+        
+        return (service, account, pin, country)
+    }
     
     /**
     setBeginningString
     
     :param: string NSString or string to store in the defaults
     */
-    func setBeginningString(string: NSString) {
+    func setBeginningString(string: NSString, service: NSString, account: NSString, pin: NSString, country: NSString) {
         beginningString = string
         
         // Store the string locally
         NSUserDefaults.standardUserDefaults().setValue(string, forKey: "prefix")
+        
+        NSUserDefaults.standardUserDefaults().setValue(service, forKey: "service")
+        NSUserDefaults.standardUserDefaults().setValue(account, forKey: "account")
+        NSUserDefaults.standardUserDefaults().setValue(pin, forKey: "pin")
+        NSUserDefaults.standardUserDefaults().setValue(country, forKey: "country")
+
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 
