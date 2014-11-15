@@ -279,8 +279,7 @@ class ABManager: NSObject {
         var addressBook: ABAddressBookRef? = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
         
         // Compose a List of Contacts
-        var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
-        
+        var contactList: NSArray = ABAddressBookCopyArrayOfAllPeopleInSource(addressBook, ABAddressBookCopyDefaultSource(addressBook).takeRetainedValue()).takeRetainedValue()
         
         // Process the Records
         for record:ABRecordRef in contactList {
@@ -353,8 +352,11 @@ class ABManager: NSObject {
         var list : NSMutableArray = []
         for (var j = 0; j < ABMultiValueGetCount(phoneArray); ++j) {
             var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
-            var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
-            list.addObject(myPhone)
+            if phoneAdd != nil {
+                var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
+                list.addObject(myPhone)
+
+            }
         }
         
         return list
