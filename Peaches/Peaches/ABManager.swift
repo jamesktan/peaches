@@ -356,6 +356,7 @@ class ABManager: NSObject {
             var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
             list.addObject(myPhone)
         }
+        
         return list
     }
     
