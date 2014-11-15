@@ -21,6 +21,7 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         
         ab_removeTable.delegate = self
         ab_removeTable.dataSource = self
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTables", name: "reloadTables", object: nil)
         
     }
@@ -28,6 +29,11 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(animated: Bool) {
         ab = ABManager.sharedInstance.fetchAddressBookContacts()
         ab_removeTable.reloadData()
+        
+        if (!ABManager.sharedInstance.getPermission()) {
+            UIAlertView(title: "Permissions Denied", message: "You denied permission for this application to edit your Address Book. Please grant permission in your Settings -> Privacy -> Contacts. ", delegate: nil, cancelButtonTitle: "Okay").show()
+        }
+
     }
 
     @IBAction func a_dismiss(sender: AnyObject) {

@@ -209,6 +209,23 @@ class ABManager: NSObject {
     */
     */
     
+    func getPermission() -> Bool {
+        let authorizationStatus = ABAddressBookGetAuthorizationStatus()
+        if (authorizationStatus == ABAuthorizationStatus.NotDetermined)
+        {
+            NSLog("requesting access...")
+            var emptyDictionary: CFDictionaryRef?
+            var addressBook = !(ABAddressBookCreateWithOptions(emptyDictionary, nil) != nil)
+            ABAddressBookRequestAccessWithCompletion(addressBook,{success, error in
+            })
+        }
+        
+        if (authorizationStatus == ABAuthorizationStatus.Denied || authorizationStatus == ABAuthorizationStatus.Restricted) {
+            return false
+        } else {
+            return true
+        }
+    }
     
     /**
     getAddressBookNames
@@ -224,7 +241,6 @@ class ABManager: NSObject {
             ABAddressBookRequestAccessWithCompletion(addressBook,{success, error in
                 if success {
                     self.processContactNames();
-                    NSNotificationCenter.defaultCenter().postNotificationName("reloadTables", object: self)
                 }
                 else {
                     NSLog("unable to request access")
@@ -237,6 +253,7 @@ class ABManager: NSObject {
         else if (authorizationStatus == ABAuthorizationStatus.Authorized) {
             NSLog("access granted")
             processContactNames()
+
         }
     }
     

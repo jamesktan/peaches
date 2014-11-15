@@ -21,6 +21,7 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tv_abTable.delegate = self
         tv_abTable.dataSource = self
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTables", name: "reloadTables", object: nil)
 
     }
@@ -28,11 +29,17 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(animated: Bool) {
         ab = ABManager.sharedInstance.fetchAddressBookContacts()
         tv_abTable.reloadData()
+        
+        if (!ABManager.sharedInstance.getPermission()) {
+            UIAlertView(title: "Permissions Denied", message: "You denied permission for this application to edit your Address Book. Please grant permission in your Settings -> Privacy -> Contacts. ", delegate: nil, cancelButtonTitle: "Okay").show()
+        }
+
     }
 
     @IBAction func a_dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func reloadTables() {
         ab = ABManager.sharedInstance.fetchAddressBookContacts()
         tv_abTable.reloadData()

@@ -15,7 +15,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    override func viewDidAppear(animated:Bool) {
+        if (!ABManager.sharedInstance.getPermission()) {
+            UIAlertView(title: "Permissions Denied", message: "You denied permission for this application to edit your Address Book. Please grant permission in your Settings -> Privacy -> Contacts. ", delegate: nil, cancelButtonTitle: "Okay").show()
+        }
+    }
     @IBAction func a_credentials(sender: AnyObject) {
         self.performSegueWithIdentifier("editCredentials", sender: self)
     }

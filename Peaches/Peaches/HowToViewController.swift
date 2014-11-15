@@ -12,6 +12,11 @@ class HowToViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (!ABManager.sharedInstance.getPermission()) {
+            UIAlertView(title: "Permissions Denied", message: "You denied permission for this application to edit your Address Book. Please grant permission in your Settings -> Privacy -> Contacts. ", delegate: nil, cancelButtonTitle: "Okay").show()
+        }
+
 
         // Do any additional setup after loading the view.
     }

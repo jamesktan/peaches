@@ -39,6 +39,10 @@ class EditCredsViewController: UIViewController {
         tf_pinCode.text = prefixComponents.pin as NSString
         tf_countryCode.text = prefixComponents.country as NSString
 
+        if (!ABManager.sharedInstance.getPermission()) {
+            UIAlertView(title: "Permissions Denied", message: "You denied permission for this application to edit your Address Book. Please grant permission in your Settings -> Privacy -> Contacts. ", delegate: nil, cancelButtonTitle: "Okay").show()
+        }
+
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
