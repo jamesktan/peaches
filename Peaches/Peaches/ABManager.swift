@@ -273,10 +273,23 @@ class ABManager: NSObject {
         
         // Compose a List of Contacts
         var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
-
+        
+        
         // Process the Records
         for record:ABRecordRef in contactList {
-            processAddressbookRecord(record)
+            let first = ABRecordCopyValue(record, kABPersonFirstNameProperty)?.takeRetainedValue() as String?
+            let last  = ABRecordCopyValue(record, kABPersonLastNameProperty)?.takeRetainedValue() as String?
+            let nick  = ABRecordCopyValue(record, kABPersonNicknameProperty)?.takeRetainedValue() as String?
+
+            if first != nil {
+                processAddressbookRecord(record)
+            } else if last != nil {
+                processAddressbookRecord(record)
+            } else if nick != nil {
+                processAddressbookRecord(record)
+            } else {
+                println("JTAN: contact has no name")
+            }
         }
     }
     
@@ -286,7 +299,7 @@ class ABManager: NSObject {
     :param: addressBookRecord ABRecordRef - an AddressBook Framework object for a Contact
     */
     func processAddressbookRecord(addressBookRecord: ABRecordRef) {
-        var contactName: String = ABRecordCopyCompositeName(addressBookRecord).takeRetainedValue() as NSString
+        var contactName = ABRecordCopyCompositeName(addressBookRecord).takeRetainedValue()
         processPhone(addressBookRecord, name: contactName)
     }
     
@@ -304,6 +317,11 @@ class ABManager: NSObject {
             var phoneAdd = ABMultiValueCopyValueAtIndex(phoneArray, j)
             var myPhone : NSString = extractABPhoneNumber(phoneAdd) as NSString!
             list.addObject(myPhone)
+        }
+        
+        if list.count == 0 {
+            println("JTAN: no contacts! skip!")
+            return
         }
         
         var c : ABContact = ABContact()
@@ -338,12 +356,14 @@ class ABManager: NSObject {
             return Unmanaged<NSObject>.fromOpaque(ab.toOpaque()).takeUnretainedValue()
         }
         return nil
+
     }
     func extractABPhoneRef (abPhoneRef: Unmanaged<ABMultiValueRef>!) -> ABMultiValueRef? {
         if let ab = abPhoneRef {
             return Unmanaged<NSObject>.fromOpaque(ab.toOpaque()).takeUnretainedValue()
         }
         return nil
+
     }
     func extractABPhoneNumber(abPhoneNumber: Unmanaged<AnyObject>!) -> String? {
         if let ab = abPhoneNumber {
