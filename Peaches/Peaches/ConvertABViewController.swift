@@ -21,7 +21,9 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tv_abTable.delegate = self
         tv_abTable.dataSource = self
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         ab = ABManager.sharedInstance.fetchAddressBookContacts()
         tv_abTable.reloadData()
     }

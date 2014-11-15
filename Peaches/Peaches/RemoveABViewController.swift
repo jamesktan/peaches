@@ -22,9 +22,11 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         ab_removeTable.delegate = self
         ab_removeTable.dataSource = self
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         ab = ABManager.sharedInstance.fetchAddressBookContacts()
         ab_removeTable.reloadData()
-
     }
 
     @IBAction func a_dismiss(sender: AnyObject) {

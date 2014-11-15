@@ -73,6 +73,7 @@ class ABManager: NSObject {
     */
     func fetchAddressBookContacts() -> NSMutableArray {
         if (addressBookArray.count == 0) {
+            deleteAddressBookContacts()
             getAddressBookNames()
         }
         return addressBookArray
