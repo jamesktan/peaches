@@ -159,6 +159,7 @@ class ABManager: NSObject {
                 // Remove the string's country code, should be the first 3 numbers
                 var range : NSRange = NSMakeRange(0,3);
                 string = string.stringByReplacingCharactersInRange(range, withString: "")
+                
                 newList.addObject(string)
             }
         }
