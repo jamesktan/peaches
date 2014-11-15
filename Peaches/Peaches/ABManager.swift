@@ -224,6 +224,7 @@ class ABManager: NSObject {
             ABAddressBookRequestAccessWithCompletion(addressBook,{success, error in
                 if success {
                     self.processContactNames();
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadTables", object: self)
                 }
                 else {
                     NSLog("unable to request access")

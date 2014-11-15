@@ -21,6 +21,7 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         
         ab_removeTable.delegate = self
         ab_removeTable.dataSource = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTables", name: "reloadTables", object: nil)
         
     }
     
@@ -57,6 +58,10 @@ class RemoveABViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    func reloadTables() {
+        ab = ABManager.sharedInstance.fetchAddressBookContacts()
+        ab_removeTable.reloadData()
+    }
 
     /**
     *  

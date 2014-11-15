@@ -21,6 +21,8 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tv_abTable.delegate = self
         tv_abTable.dataSource = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTables", name: "reloadTables", object: nil)
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -31,7 +33,11 @@ class ConvertABViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBAction func a_dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    func reloadTables() {
+        ab = ABManager.sharedInstance.fetchAddressBookContacts()
+        tv_abTable.reloadData()
+    }
+
     /**
     a_convert
     Purpose: Convert the contacts on button click and then dismiss the user and prompt them about success
